@@ -1,0 +1,44 @@
+<div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+  <mat-card @slideInOut>
+    <div class="gene-card-title">
+       <div fxLayout="row" fxLayoutAlign="space-around center">
+          <div fxLayout="column">
+             <h4>{{'Show All Military News'|translate}}</h4>
+
+          </div> <span fxFlex></span>
+
+          <div fxLayout="column">
+             <button class="mrgn-b-xs" mat-raised-button color="primary" (click)="toAdd()">{{'Add New'|translate}}</button>
+          </div>
+       </div>
+
+       <mat-divider></mat-divider>
+    </div>
+    <div class="gene-card-content pad-t-none">
+       <div class="table-responsive">
+          <table class="table table-hover table-middle th-fw-light mb-0">
+             <thead>
+                <tr>
+                   <th>{{'new title'|translate}}</th>
+                   <th>{{'create Date'|translate}}</th>
+                   <th>{{'Details'|translate}}</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr *ngFor="let item of News">
+                  <td>{{item.title}}</td>
+                  <td>{{item.createDate | date : "yyyy-MM-dd" }}</td>
+                  <td>
+                         <div class="dropdown row">
+                                 <a mat-icon-button matTooltip="{{'Details'|translate}}" (click)='openDialog(item.id)'>
+                                       <mat-icon color="primary">arrow_left</mat-icon>
+                                 </a>
+                        </div>
+                  </td>
+                </tr>
+             </tbody>
+          </table>
+       </div>
+    </div>
+ </mat-card>
+</div>

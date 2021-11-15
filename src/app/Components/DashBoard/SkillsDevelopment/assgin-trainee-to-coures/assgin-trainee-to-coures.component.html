@@ -1,0 +1,54 @@
+<div class="container" dir="rtl">
+  <h1 mat-dialog-title>{{'Assign Trainee'}}</h1>
+  <form [formGroup]="assignTraineetoCourseForm" (ngSubmit)="onSubmit(assignTraineetoCourseForm)">
+    <div mat-dialog-content>
+      <div fxLayout="column">
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+               <!--Trainee Name-->
+                 <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" fxFlex.gt-md="100">
+                  <mat-form-field class="full-wid mrgn-b-lg ">
+                    <mat-label>{{'Trainee Name' | translate}}</mat-label>
+                      <mat-select required formControlName="TraineeId">
+                        <div  *ngFor="let item of allTrainee">
+                       <mat-option value="{{item.id}}" >
+                            {{item.fullName | translate}}
+                       </mat-option>
+                      </div>
+                      </mat-select>
+                  </mat-form-field>
+                 </div>
+        </div>
+
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+          <!--ٍStart Date-->
+            <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" fxFlex.gt-md="100">
+              <mat-form-field class="full-wid mrgn-b-lg ">
+                <mat-label>{{'Start Date' | translate}}</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="StartDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+         </div>
+
+         <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+          <!--End Date-->
+            <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" fxFlex.gt-md="100">
+              <mat-form-field class="full-wid mrgn-b-lg ">
+                <mat-label>{{'End Date' | translate}}</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="EndDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </div>
+         </div>
+      </div>
+    </div>
+    <div mat-dialog-actions style="text-align: center; justify-content: center;">
+      <button mat-raised-button color="accent" type="submit">{{'Add' | translate}}</button>
+      <button mat-raised-button color="warn" [mat-dialog-close]="data.animal" cdkFocusInitial>{{'Close' | translate}}</button>
+    </div>
+  </form>
+</div>

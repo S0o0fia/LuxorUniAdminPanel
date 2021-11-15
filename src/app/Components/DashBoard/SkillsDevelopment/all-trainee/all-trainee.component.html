@@ -1,0 +1,31 @@
+<div class="table-responsive">
+  <mat-card>
+    <mat-card-content class=" table-responsive">
+     <table class="table table-hover table-middle mb-0 table-bordered">
+       <thead  class="thead-dark">
+          <tr>
+             <th>{{'FullName' | translate}}</th>
+             <th>{{'Email' | translate}}</th>
+             <th>{{'Phone' | translate}}</th>
+             <th>{{'Address' | translate}}</th>
+             <th>{{'FacultyDesc' | translate}}</th>
+             <th>{{'SceintficDegree' |translate}}</th>
+             <th>{{'Spaceilist' |translate}}</th>
+           </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let item of AllTrainees">
+             <td>{{item.fullName}}</td>
+             <td>{{item.email}}</td>
+             <td>{{item.phone}}</td>
+             <td>{{item.address}}</td>
+             <td>{{item.faculty | translate}}</td>
+             <td>{{item.sceintficDegree  | translate}}</td>
+             <td>{{item.spaceilist }}</td>
+            </tr>
+       </tbody>
+    </table>
+    </mat-card-content>
+  </mat-card>
+
+ </div>

@@ -1,0 +1,106 @@
+<div fxLayout="row wrap" fxLayoutAlign=" start" class="gene-form-wizard">
+  <mat-card fxFlex="100%">
+     <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="center center">
+           <div fxLayout="column">
+              <h4>{{'Add New Trainee'|translate}}</h4>
+           </div>
+           <span fxFlex></span>
+        </div>
+        <mat-divider></mat-divider>
+     </div>
+     <div class="gene-card-content">
+              <form [formGroup]="AddTraineeForm" (ngSubmit)="onSubmit(AddTraineeForm)">
+                 <div fxLayout="column">
+
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+
+                     <!--FullName-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                          <mat-form-field class="full-wid mrgn-b-lg ">
+                           <input matInput placeholder="{{'FullName'|translate}}"
+                           formControlName="FullName"
+                           type="text" required>
+                         </mat-form-field>
+                       </div>
+
+                    <!--Email-->
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                      <mat-form-field class="full-wid mrgn-b-lg ">
+                      <input matInput placeholder="{{'Email'|translate}}"
+                      formControlName="Email"
+                      type="email" required>
+                      </mat-form-field>
+                    </div>
+
+
+              </div>
+
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                <!--Phone-->
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                  <mat-form-field class="full-wid mrgn-b-lg ">
+                  <input matInput placeholder="{{'Phone'|translate}}"
+                  formControlName="Phone"
+                  type="email" required>
+                  </mat-form-field>
+                </div>
+
+                   <!--Addess-->
+                   <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                    <mat-form-field class="full-wid mrgn-b-lg ">
+                     <input matInput placeholder="{{'Address'|translate}}"
+                     formControlName="Address"
+                     type="text" required>
+                    </mat-form-field>
+                   </div>
+              </div>
+
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                <mat-form-field class="full-wid mrgn-b-lg ">
+                  <mat-label>{{'FacultyDesc' | translate}}</mat-label>
+                    <mat-select required formControlName="Faculty">
+                      <div  *ngFor="let item of faculties">
+                     <mat-option value="{{item.value}}" >
+                          {{item.label | translate}}
+                     </mat-option>
+                    </div>
+                    </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                <mat-form-field class="full-wid mrgn-b-lg ">
+                  <mat-label>{{'SceintficDegree' | translate}}</mat-label>
+                    <mat-select required formControlName="SceintficDegree">
+                      <div  *ngFor="let item of scentificDegree">
+                     <mat-option value="{{item.value}}" >
+                          {{item.label | translate}}
+                     </mat-option>
+                    </div>
+                    </mat-select>
+                </mat-form-field>
+              </div>
+              </div>
+
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+               <!--Spaceilist-->
+                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                  <mat-form-field class="full-wid mrgn-b-lg ">
+                   <input matInput placeholder="{{'Spaceilist'|translate}}"
+                   formControlName="Spaceilist"
+                   type="text" required>
+                  </mat-form-field>
+                 </div>
+              </div>
+
+             <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49" fxLayoutAlign="end">
+                <button mat-raised-button color="accent" type="submit" >{{'Add' | translate}}</button>
+              </div>
+
+            </div>
+          </form>
+     </div>
+  </mat-card>
+</div>

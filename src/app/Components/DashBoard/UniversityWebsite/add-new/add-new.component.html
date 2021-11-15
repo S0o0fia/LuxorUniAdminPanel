@@ -1,0 +1,71 @@
+<div fxLayout="row wrap" fxLayoutAlign=" start" class="gene-form-wizard">
+  <mat-card fxFlex="100%">
+     <div class="gene-card-title">
+        <div fxLayout="row" fxLayoutAlign="center center">
+           <div fxLayout="column">
+              <h4>{{'Add New'|translate}}</h4>
+           </div>
+           <span fxFlex></span>
+        </div>
+        <mat-divider></mat-divider>
+     </div>
+     <div class="gene-card-content">
+              <form [formGroup]="AddNew" (ngSubmit)="onSubmit(AddNew)">
+                 <div fxLayout="column">
+
+                    <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+
+                     <!--New Title-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                          <mat-form-field class="full-wid mrgn-b-lg ">
+                           <textarea matInput placeholder="{{'new title'|translate}}"
+                            formControlName = 'title'
+                           type="text" required></textarea>
+                         </mat-form-field>
+                       </div>
+
+                     <!--New Details-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                          <mat-form-field class="full-wid mrgn-b-lg ">
+                              <textarea matInput
+                              formControlName = 'newDetails'
+                               placeholder="{{'New Details'|translate}}" type="text" required> </textarea>
+                          </mat-form-field>
+                       </div>
+
+                       <!--main photo-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-label>{{'New Main photo'|translate}}</mat-label>  &nbsp;
+                        <input type="file" mat-input name="mainPhoto"  (change)="mainPhoto($event)" required/>
+                        </div>
+
+
+                       <!--Photo 1-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-label>{{'Photo1'|translate}}</mat-label>         &nbsp;
+                        <input type="file" mat-input name="Photo1" (change)="Photo1($event)" required/>
+                        </div>
+
+                       <!--Photo2-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-label>{{'Photo2'|translate}}</mat-label>        &nbsp;
+                        <input type="file" mat-input name="Photo2" (change)="Photo2($event)" required/>
+                        </div>
+
+                       <!--photo3-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-label>{{'Photo3'|translate}}</mat-label>        &nbsp;
+                        <input type="file" mat-input name="Photo3" (change)="Photo3($event)" required/>
+                        </div>
+               </div>
+                <br>
+                <br>
+               <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" fxFlex.gt-md="100" fxLayoutAlign="center">
+                <button mat-raised-button color="accent" type="submit" >{{'Add' | translate}}</button>
+              </div>
+             </div>
+           </form>
+
+     </div>
+  </mat-card>
+</div>

@@ -1,0 +1,52 @@
+<div class="table-responsive" @slideInOut>
+ <mat-card >
+    <mat-card-content style="text-align: center; justify-content: center;">
+      <mat-form-field>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center"  fxLayout.xs="column">
+          <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" fxFlex.gt-md="100">
+        <mat-label>{{'Choose Year of Training'|translate}}</mat-label>
+        <mat-select name="selectedYear" [(ngModel)]="selectedYear">
+          <div *ngFor="let item of years">
+            <mat-option value="{{item}}">{{item}}</mat-option>
+          </div>
+       </mat-select>
+       </div>
+       </div>
+      </mat-form-field>
+     </mat-card-content>
+     <mat-card-actions style="justify-content: center; text-align: center; margin-bottom:1%;">
+      <button mat-raised-button color="primary" (click)="Filter()">{{'Search' | translate}}</button>
+     </mat-card-actions>
+ </mat-card>
+
+  <mat-card>
+    <mat-card-content class=" table-responsive">
+     <table class="table table-hover table-middle mb-0 table-bordered">
+       <thead  class="thead-dark">
+          <tr>
+             <th>{{'StudentName' | translate}}</th>
+             <th>{{'SSD' | translate}}</th>
+             <th>{{'FacultyDesc' | translate}}</th>
+             <th>{{'Grade' | translate}}</th>
+             <th>{{'StudyNature' | translate}}</th>
+             <th>{{'Phone' | translate}}</th>
+             <th>{{'Email' | translate}}</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let item of Students">
+             <td>{{item.studentName}}</td>
+             <td>{{item.ssd}}</td>
+             <td>{{item.facultyDesc}}</td>
+             <td>{{item.grade}}</td>
+             <td>{{item.studyNature | translate}}</td>
+             <td>{{item.phone}}</td>
+             <td>{{item.email}}</td>
+          </tr>
+       </tbody>
+    </table>
+    </mat-card-content>
+  </mat-card>
+
+ </div>
+

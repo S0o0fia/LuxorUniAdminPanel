@@ -1,0 +1,139 @@
+<div fxLayout="row wrap" fxLayoutAlign=" start" class="gene-form-wizard">
+   <mat-card fxFlex="100%">
+      <div class="gene-card-title">
+         <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column">
+               <h4>{{'Add New Training Course'|translate}}</h4>
+            </div>
+            <span fxFlex></span>
+         </div>
+         <mat-divider></mat-divider>
+      </div>
+      <div class="gene-card-content">
+               <form [formGroup]="AddCourseForm" (ngSubmit)="onSubmit(AddCourseForm)">
+                  <div fxLayout="column">
+
+                     <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+
+                      <!--Course Code-->
+                        <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                           <mat-form-field class="full-wid mrgn-b-lg ">
+                            <input matInput placeholder="{{'Course Code'|translate}}"
+                            formControlName="courseCode"
+                            type="text" required>
+                          </mat-form-field>
+                        </div>
+
+                      <!--Course Name-->
+                        <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                           <mat-form-field class="full-wid mrgn-b-lg ">
+                               <input matInput
+                               formControlName="courseName"
+                                placeholder="{{'Course Name'|translate}}" type="text" required>
+                           </mat-form-field>
+                        </div>
+                     </div>
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                  <!--Course Location-->
+                  <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                      <mat-form-field class="full-wid mrgn-b-lg ">
+                        <mat-label>{{'Course Location' | translate}}</mat-label>
+                          <mat-select required formControlName="courseLocation">
+                            <mat-option value="Online">
+                              {{'Online' | translate}}
+                            </mat-option>
+                            <mat-option value="InCenter">
+                              {{'InCenter' | translate}}
+                            </mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                   </div>
+
+                  <!--Course Period-->
+                  <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                    <mat-form-field class="full-wid mrgn-b-lg ">
+                      <mat-label>{{'Course Period' | translate}}</mat-label>
+                        <mat-select required formControlName="coursePeriod">
+                          <mat-option value="pm">
+                            {{'pm' | translate}}
+                          </mat-option>
+                          <mat-option value="am">
+                            {{'am' | translate}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                 </div>
+                </div>
+
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                      <!--Course Proirity-->
+                      <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-form-field class="full-wid mrgn-b-lg ">
+                          <mat-label>{{'Course Proirity' | translate}}</mat-label>
+                            <mat-select required formControlName="coursePriority">
+                              <mat-option value="required">
+                                {{'required' | translate}}
+                              </mat-option>
+                              <mat-option value="optional">
+                                {{'optional' | translate}}
+                              </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                      </div>
+
+
+                       <!--Course Type-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-form-field class="full-wid mrgn-b-lg ">
+                          <mat-label>{{'Course Type' | translate}}</mat-label>
+                            <mat-select required formControlName="courseType">
+                              <mat-option value="general">
+                                {{'general' | translate}}
+                              </mat-option>
+                              <mat-option value="medical">
+                                {{'medical' | translate}}
+                              </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                      </div>
+                </div>
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                      <!--Start Date-->
+                      <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-form-field class="full-wid mrgn-b-lg ">
+                          <mat-label>{{'Start Date' | translate}}</mat-label>
+                          <input matInput [matDatepicker]="picker" formControlName="startDate">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+
+
+                       <!--End Date-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-form-field class="full-wid mrgn-b-lg ">
+                          <mat-label>{{'End Date' | translate}}</mat-label>
+                          <input matInput [matDatepicker]="picker2" formControlName="endDate">
+                          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                          <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                </div>
+
+
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+             
+               <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49" fxLayoutAlign="end">
+                 <button mat-raised-button color="accent" type="submit" >{{'Add' | translate}}</button>
+               </div>
+                </div>
+              </div>
+            </form>
+
+      </div>
+   </mat-card>
+</div>

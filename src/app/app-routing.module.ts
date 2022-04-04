@@ -1,3 +1,4 @@
+import { ShowMilitaryCourseLectureComponent } from './Components/DashBoard/MilitryEducation/show-military-course-lecture/show-military-course-lecture.component';
 import { ShowMilitaryCourseStudentsComponent } from './Components/DashBoard/MilitryEducation/show-military-course-students/show-military-course-students.component';
 import { ShowMilitaryCoursesComponent } from './Components/DashBoard/MilitryEducation/show-military-courses/show-military-courses.component';
 import { AllTraineeComponent } from './Components/DashBoard/SkillsDevelopment/all-trainee/all-trainee.component';
@@ -52,7 +53,8 @@ const routes: Routes = [
              {path :'AddMilitaryNews' , component :  AddMilitaryNewComponent} ,
              {path :'AddMilitaryCourse' , component :  AddMilitaryCourseComponent} ,
              {path :'GetMilitaryCourses' , component :  ShowMilitaryCoursesComponent} ,
-             {path :'ShowMilitaryCourseStudents/:id' , component :  ShowMilitaryCourseStudentsComponent}
+             {path :'ShowMilitaryCourseStudents/:id' , component :  ShowMilitaryCourseStudentsComponent},
+             {path : 'ShowMilitaryCourseLectures/:id' , component:ShowMilitaryCourseLectureComponent},
             ]
         }
      ] },

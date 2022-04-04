@@ -1,0 +1,38 @@
+
+<mat-card>
+     <mat-card-header>
+           <mat-card-title>رفع محاضرات الخاصة ب {{course.courseName}}</mat-card-title>
+     </mat-card-header>
+
+     <mat-card-content >
+      <form [formGroup]="AddForm" (ngSubmit)="AddLecture(AddForm)">
+      <div fxLayout="column">
+        <div fxLayout="row wrap" fxLayoutAlign="right space-between">
+         <!--New Title-->
+           <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" fxFlex.gt-md="100" dir="rtl">
+              <mat-form-field class="full-wid mrgn-b-lg ">
+                <mat-label style="text-align:right;">عنوان المحاضرة</mat-label>     &nbsp;
+              <input  matInput type="text" placeholder="عنوان المحاضرة" formControlName="fileName" required/>
+             </mat-form-field>
+           </div>
+           <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" fxFlex.gt-md="100">
+              <input type="file" (change)="UploadFile($event)" required/>
+              <mat-label>إرفاق ملف المحاضرة </mat-label>         &nbsp;
+           </div>
+        </div>
+      </div>
+      <mat-card-footer style="padding-bottom: 5%; padding-top: 5%;">
+        <div fxLayout="column">
+        <div fxLayout="row wrap" fxLayoutAlign="center space-between ">
+        <button  mat-raised-button type="button" color="warn" mat-dialog-close><mat-icon>close</mat-icon>إغلاق</button>
+        <button mat-raised-button type="submit" color="primary"><mat-icon>save</mat-icon> حفظ </button>
+
+      </div>
+        </div>
+      </mat-card-footer>
+    </form>
+     </mat-card-content>
+
+
+</mat-card>
+

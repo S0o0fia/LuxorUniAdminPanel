@@ -54,6 +54,8 @@ import { ShowCourseTraineeComponent } from './Components/DashBoard/SkillsDevelop
 import { AddMilitaryCourseComponent } from './Components/DashBoard/MilitryEducation/add-military-course/add-military-course.component';
 import { ShowMilitaryCoursesComponent } from './Components/DashBoard/MilitryEducation/show-military-courses/show-military-courses.component';
 import { ShowMilitaryCourseStudentsComponent } from './Components/DashBoard/MilitryEducation/show-military-course-students/show-military-course-students.component';
+import { UploadMilitaryLecturesComponent } from './Components/DashBoard/MilitryEducation/upload-military-lectures/upload-military-lectures.component';
+import { ShowMilitaryCourseLectureComponent } from './Components/DashBoard/MilitryEducation/show-military-course-lecture/show-military-course-lecture.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +79,9 @@ import { ShowMilitaryCourseStudentsComponent } from './Components/DashBoard/Mili
     ShowCourseTraineeComponent,
     AddMilitaryCourseComponent,
     ShowMilitaryCoursesComponent,
-    ShowMilitaryCourseStudentsComponent
+    ShowMilitaryCourseStudentsComponent,
+    UploadMilitaryLecturesComponent,
+    ShowMilitaryCourseLectureComponent
 
 
 

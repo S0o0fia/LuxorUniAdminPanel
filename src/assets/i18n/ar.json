@@ -101,7 +101,10 @@
     "Student Name" :"اسم الطالب" ,
     "Scucess State" : "حالة النجاح",
     "Resarches" :"البحث المقدم" ,
-    "Military Courses" :"الدورات التدربية بالتربية العسكرية"
+    "Military Courses" :"الدورات التدربية بالتربية العسكرية" ,
+    "Show Student Info" : "عرض معلومات الطالب" ,
+    "Show Resarches" :"عرض الأبحاث" ,
+     "Upload Lectures" : "رفع المحاضرات"
 
 
 }

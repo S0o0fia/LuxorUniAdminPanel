@@ -12,7 +12,7 @@
 
     <mat-card-content class=" table-responsive">
      <table class="table table-hover table-middle mb-0 table-bordered">
-       <thead  class="thead-dark">
+       <thead  class="thead-dark" >
           <tr>
              <th>{{'Course Name' | translate}}</th>
              <th  colspan="1">{{'Start Date' | translate}}</th>
@@ -32,8 +32,9 @@
                 <span  *ngIf="!item.isActive" class="deactive">{{'Dectivated' | translate}}</span>
 
              </td>
-            <td  colspan="1">
+            <td  colspan="1" style="justify-content: center; text-align: center;">
               <mat-icon class="edit" matTooltip="{{'Show Course Students' | translate}}" (click)="openShowStudent(item.id)">person_pin</mat-icon>
+              <mat-icon matTooltip="{{'عرض محاضرات الدورة' | translate}}" class="edit" (click)="openUploadLecture(item.id)">developer_board</mat-icon>
               <mat-icon class="edit" matTooltip="{{'Edit Course' | translate}}" (click)="EditCourse(item.id)">edit</mat-icon>
               <mat-icon matTooltip="{{'Delete Course' | translate}}" class="edit" (click)="DeleteCourse(item.id)">delete</mat-icon>
             </td>

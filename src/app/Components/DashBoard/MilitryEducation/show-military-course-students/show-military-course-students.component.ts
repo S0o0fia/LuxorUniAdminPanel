@@ -23,14 +23,19 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class ShowMilitaryCourseStudentsComponent implements OnInit {
   Students : any;
-
+  course : any;
   constructor(private service : MilitryService , private route : ActivatedRoute) {
 
    }
 
   ngOnInit(): void {
-        this.service.getCourseStudents(this.route.snapshot.params['id']).subscribe(
-          data=> this.Students = data,
+
+        this.service.getCourse(this.route.snapshot.paramMap.get('id')).subscribe(
+           data=> this.course = data ,
+           err=> console.log(err)
+        )
+        this.service.getCourseStudents(this.route.snapshot.paramMap.get('id')).subscribe(
+          data=>(this.Students = data),
           err => console.log(err)
         )
   }

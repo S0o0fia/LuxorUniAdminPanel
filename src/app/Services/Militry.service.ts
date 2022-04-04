@@ -58,9 +58,38 @@ public AddNewsPhoto (formData : FormData , id : number)
     public getCourseStudents (id)
     {
 
-      let url = 'http://luxor.edu.eg:8098/api/MiitaryEducationCourse/GetCourseStudenta/'+id;
+
+      let url = 'http://luxor.edu.eg:8098/api/MiitaryEducationCourse/GetCourseStudents/'+id;
       return this.http.get(url);
     }
+
+
+    public getCourse (id)
+    {
+      let url = 'http://luxor.edu.eg:8098/api/MiitaryEducationCourse/GetMilitaryCourse/'+id
+      return this.http.get(url);
+    }
+
+
+    public addLectureInfo (data)
+    {
+      let url = 'http://luxor.edu.eg:8098/api/MilitaryEducationLectures/AddLecture';
+      return this.http.post(url , data);
+    }
+
+    public AddLectureFile (formData : FormData , id : number)
+      {
+        let url = 'http://luxor.edu.eg:8098/api/MilitaryEducationLectures/AddLectureFile?id='+id;
+        return this.http.post(url , formData );
+      }
+
+
+      public getCourseLecture ( id : any)
+      {
+        let url = 'http://luxor.edu.eg:8098/api/MilitaryEducationLectures/GetCourseLectures?id='+id;
+        return this.http.get(url);
+      }
+
 
 
 }

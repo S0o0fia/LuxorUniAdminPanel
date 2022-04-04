@@ -1,3 +1,5 @@
+import { UploadMilitaryLecturesComponent } from './../upload-military-lectures/upload-military-lectures.component';
+import { MatDialog } from '@angular/material/dialog';
 import { MilitryService } from './../../../../Services/Militry.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -23,7 +25,7 @@ import { transition, trigger, animate, style } from '@angular/animations';
 })
 export class ShowMilitaryCoursesComponent implements OnInit {
   public Courses : any;
-  constructor(private service : MilitryService , private router : Router ) { }
+  constructor(private service : MilitryService , private router : Router , private dailog : MatDialog) { }
 
   ngOnInit(): void {
 
@@ -41,6 +43,9 @@ export class ShowMilitaryCoursesComponent implements OnInit {
   }
 
 
-
+  openUploadLecture(id : any)
+  {
+    this.router.navigate(['DashBoard/MilitryEducation/ShowMilitaryCourseLectures',id])
+  }
 
 }

@@ -33,6 +33,15 @@
                           </mat-form-field>
                        </div>
 
+                         <!--Create Date-->
+                    <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                          <mat-form-field class="full-wid mrgn-b-lg ">
+                            <input matInput [matDatepicker]="picker" formControlName="createDate" required placeholder="تاريخ الخبر">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                       </div>
+
                        <!--main photo-->
                        <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
                         <mat-label>{{'New Main photo'|translate}}</mat-label>  &nbsp;

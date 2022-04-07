@@ -19,7 +19,8 @@ export class AddNewComponent implements OnInit {
     this.AddNew = this.formBuilder.group({
       title : ['' , Validators.required] ,
       createDate : [Date.now , Validators.required],
-      newDetails : ['' , Validators.required]     });
+      newDetails : ['' , Validators.required]  ,
+      });
 
       this.fromData = new FormData()
 
@@ -64,8 +65,9 @@ export class AddNewComponent implements OnInit {
 
   onSubmit (data : FormGroup)
   {
-    console.log(data.value)
-     this.services.AddNew(data.value).subscribe(
+
+   
+    this.services.AddNew(data.value).subscribe(
        (data:any) => {
           this.id = data.id;
 

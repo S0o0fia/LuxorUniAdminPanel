@@ -104,7 +104,10 @@
     "Military Courses" :"الدورات التدربية بالتربية العسكرية" ,
     "Show Student Info" : "عرض معلومات الطالب" ,
     "Show Resarches" :"عرض الأبحاث" ,
-     "Upload Lectures" : "رفع المحاضرات"
+     "Upload Lectures" : "رفع المحاضرات" ,
+     "TICO" : "مركز التايكو" ,
+     "tico Add News" : "إضافة خبر لمركز التايكو" ,
+     "tico Show All News" :"جميع أخبار مركز التايكو"
 
 
 }

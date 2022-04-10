@@ -17,7 +17,7 @@ export interface Menu {
 }
 
 const MENUITEMS = [
-    {
+      {
       state: 'SkillsDevelopment',
       name: 'Skills Development',
       type: 'sub',
@@ -32,8 +32,6 @@ const MENUITEMS = [
 
       ]
       } ,
-
-
       {
         state: 'UnivrsityNews',
         name: 'University News',
@@ -47,9 +45,8 @@ const MENUITEMS = [
 
 
         ]
-        } ,
-
-        {
+      } ,
+      {
           state: 'MilitryEducation',
           name: 'MilitryEducation',
           type: 'sub',
@@ -64,9 +61,19 @@ const MENUITEMS = [
             {state: 'AddMilitaryCourse', name: 'Add Course',   type: 'link' , icon : 'library_add' },
 
           ]
-       } ,
-
-    {
+      } ,
+      {
+          state: 'TICO',
+          name: 'TICO',
+          type: 'sub',
+          icon: 'library_books',
+          mainrole : 'admin' ,
+          subrole :'tico' ,
+          children: [
+              {state: 'addTicoNews', name: 'tico Add News',   type: 'link' , icon : 'library_add' },
+              {state: 'showTicoNews', name: 'tico Show All News',   type: 'link' , icon : 'library_add' }         ]
+      } ,
+      {
 
       state: 'profile',
       name: 'Profile',
@@ -75,8 +82,8 @@ const MENUITEMS = [
       subrole :'all' ,
       icon: 'person',
 
-    },
-    {
+      },
+      {
       state: 'logout',
       name: 'Logout',
       type: 'button',
@@ -84,7 +91,7 @@ const MENUITEMS = [
       subrole :'all' ,
       icon: 'exit_to_app'
 
-    }
+      }
 ]
 
 @Injectable()

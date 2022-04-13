@@ -1,13 +1,20 @@
 <div class="table-responsive">
   <mat-card @slideInOut>
-    <mat-card-header style="justify-content: center; ">
-      <mat-card-title style="font-weight: bold;padding-bottom: 2%;">طلاب {{course.courseName}}</mat-card-title>
+    <mat-card-header style="float: left;">
+        <button color="primary" mat-raised-button (click)="Export()">{{"Export PDF" | translate}}</button>
     </mat-card-header>
     <mat-card-content class=" table-responsive">
+      <mat-card-header style="justify-content: center; ">
+        <mat-card-title style="font-weight: bold;padding-bottom: 2%;">طلاب {{course.courseName}}</mat-card-title>
+      </mat-card-header>
      <table class="table table-hover table-middle mb-0 table-bordered">
        <thead  class="thead-dark">
           <tr>
              <th>{{'Student Name' | translate}}</th>
+             <th>{{'SSD' | translate}}</th>
+             <th>{{'FacultyDesc' | translate}}</th>
+             <th>{{'Grade' | translate}}</th>
+             <th>{{'RegistedDate' | translate}}</th>
              <th>{{'Scucess State'|translate}}</th>
              <th>{{'Resarches'|translate}}</th>
              <th>{{'Controls' |translate}}</th>
@@ -16,6 +23,10 @@
        <tbody>
           <tr *ngFor="let item of Students">
              <td>{{item.studentName}}</td>
+             <td>{{item.ssd}}</td>
+             <td>{{item.faculty | translate}}</td>
+             <td>{{item.grade | translate}}</td>
+             <td>{{item.registedDate | date : 'yyyy-MM-dd'}}</td>
              <td>لم يتم التحديد</td>
              <td>لم يتم رفع البحث</td>
              <td style="text-align: center; justify-content: center;">
@@ -29,5 +40,7 @@
   </mat-card>
 
  </div>
+
+
 
 

@@ -1,3 +1,4 @@
+import { ExportRegistedStudentPDFComponent } from './Components/DashBoard/MilitryEducation/export-registed-student-pdf/export-registed-student-pdf.component';
 import { ShowMilitaryCourseLectureComponent } from './Components/DashBoard/MilitryEducation/show-military-course-lecture/show-military-course-lecture.component';
 import { ShowMilitaryCourseStudentsComponent } from './Components/DashBoard/MilitryEducation/show-military-course-students/show-military-course-students.component';
 import { ShowMilitaryCoursesComponent } from './Components/DashBoard/MilitryEducation/show-military-courses/show-military-courses.component';
@@ -55,6 +56,7 @@ const routes: Routes = [
              {path :'GetMilitaryCourses' , component :  ShowMilitaryCoursesComponent} ,
              {path :'ShowMilitaryCourseStudents/:id' , component :  ShowMilitaryCourseStudentsComponent},
              {path : 'ShowMilitaryCourseLectures/:id' , component:ShowMilitaryCourseLectureComponent},
+             {path : 'ExportMilitaryCourseLectures/:id' , component:ExportRegistedStudentPDFComponent},
             ]
         }
      ] },

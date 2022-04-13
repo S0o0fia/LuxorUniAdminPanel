@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AdminPanelService {
 
-  baseUrl : string = 'http://luxor.edu.eg:8098/api';
+  baseUrl : string = 'http://localhost:65535/api';
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8'})
 

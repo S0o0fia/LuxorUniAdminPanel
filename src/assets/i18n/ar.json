@@ -107,7 +107,20 @@
      "Upload Lectures" : "رفع المحاضرات" ,
      "TICO" : "مركز التايكو" ,
      "tico Add News" : "إضافة خبر لمركز التايكو" ,
-     "tico Show All News" :"جميع أخبار مركز التايكو"
+     "tico Show All News" :"جميع أخبار مركز التايكو",
+     "FCI" : "كلية الحاسبات والمعلومات" ,
+     "Archology" : "كلية الآثار" ,
+     "Toursim" : "كلية السياحة والفنادق" ,
+     "Alsun" : "كلية الألسن" ,
+     "crdithrs":"نظام ساعات معتمدة",
+     "classes" :"نظام فصلي" ,
+     "All Faculties" : "جميع الكليات",
+     "Fineart" : "كلية الفنون الجميلة" ,
+     "Choose Faculty" : "اختر الكلية" ,
+     "Export PDF" : "استخراج ملف PDF",
+     "RegistedDate" : "تاريخ التسجيل"
+
+
 
 
 }

@@ -26,7 +26,7 @@ import { UploadMilitaryLecturesComponent } from '../upload-military-lectures/upl
 export class ShowMilitaryCourseLectureComponent implements OnInit {
   course : any ;
   lecture : any[] = [];
-  baseUrl : string = "http://luxor.edu.eg:8098/" ;
+  baseUrl : string = "http://localhost:65535/" ;
   id      : any;
   constructor(private service : MilitryService , private dailog : MatDialog , private route: ActivatedRoute) { }
 

@@ -1,7 +1,9 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MilitryService } from './../../../../Services/Militry.service';
 import { Component, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-show-military-course-students',
@@ -24,7 +26,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class ShowMilitaryCourseStudentsComponent implements OnInit {
   Students : any;
   course : any;
-  constructor(private service : MilitryService , private route : ActivatedRoute) {
+  constructor(private service : MilitryService , private route : ActivatedRoute , private router : Router) {
 
    }
 
@@ -38,6 +40,14 @@ export class ShowMilitaryCourseStudentsComponent implements OnInit {
           data=>(this.Students = data),
           err => console.log(err)
         )
+  }
+
+  Export()
+  {
+
+    this.router.navigate(['DashBoard/MilitryEducation/ExportMilitaryCourseLectures/'+this.route.snapshot.paramMap.get('id')])
+
+
   }
 
 }

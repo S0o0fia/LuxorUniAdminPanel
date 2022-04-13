@@ -1,6 +1,8 @@
 import { MilitryService } from './../../../../Services/Militry.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-regsited-students',
@@ -22,10 +24,13 @@ import { animate, style, transition, trigger } from '@angular/animations';
 })
 export class RegsitedStudentsComponent implements OnInit {
 
+  @ViewChild('Student') content:ElementRef;
   public year : any =  new Date().getFullYear();
-  public selectedYear : string;
+  public selectedYear : string = new Date().getFullYear().toString();
   public Students : any ;
   public years: number[] = [];
+  public faculty : string = "All";
+
 
   constructor(private service : MilitryService) {
 
@@ -36,8 +41,7 @@ export class RegsitedStudentsComponent implements OnInit {
 
   Filter()
   {
-    console.log(this.selectedYear)
-    this.service.getAllStudent(this.selectedYear).subscribe(
+      this.service.getAllStudent(this.selectedYear).subscribe(
       data=> this.Students= data ,
       err => console.log(err)
     )
@@ -45,6 +49,24 @@ export class RegsitedStudentsComponent implements OnInit {
   }
   ngOnInit(): void {
 
+    this.service.getAllStudent(this.selectedYear).subscribe(
+      data=> this.Students= data ,
+      err => console.log(err))
+  }
+
+  Export()
+  {  const DATA  = document.getElementById('Student') as HTMLElement;
+      html2canvas(DATA).then(canvas => {
+
+        let fileWidth = 208;
+        let fileHeight = canvas.height * fileWidth / canvas.width;
+
+        const FILEURI = canvas.toDataURL('image/png')
+        let PDF = new jsPDF('p', 'mm', 'a4');
+        let position = 0;
+        PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+        PDF.save( 'RegistedStudent.pdf');
+        });
 
   }
 

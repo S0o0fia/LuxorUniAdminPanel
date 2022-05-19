@@ -1,3 +1,5 @@
+import { TICOAddNewComponent } from './Components/DashBoard/TICO/ticoadd-new/ticoadd-new.component';
+import { TICONewsComponent } from './Components/DashBoard/TICO/ticonews/ticonews.component';
 import { ExportRegistedStudentPDFComponent } from './Components/DashBoard/MilitryEducation/export-registed-student-pdf/export-registed-student-pdf.component';
 import { ShowMilitaryCourseLectureComponent } from './Components/DashBoard/MilitryEducation/show-military-course-lecture/show-military-course-lecture.component';
 import { ShowMilitaryCourseStudentsComponent } from './Components/DashBoard/MilitryEducation/show-military-course-students/show-military-course-students.component';
@@ -45,8 +47,8 @@ const routes: Routes = [
         ]
        } ,
 
-         //for Militry
-         {
+        //for Militry
+        {
           path : 'MilitryEducation' ,
            children : [
              {path :'RegistedStudents' , component :  RegsitedStudentsComponent} ,
@@ -57,6 +59,15 @@ const routes: Routes = [
              {path :'ShowMilitaryCourseStudents/:id' , component :  ShowMilitaryCourseStudentsComponent},
              {path : 'ShowMilitaryCourseLectures/:id' , component:ShowMilitaryCourseLectureComponent},
              {path : 'ExportMilitaryCourseLectures/:id' , component:ExportRegistedStudentPDFComponent},
+            ]
+        },
+
+         //for TICO
+         {
+          path : 'TICO' ,
+           children : [
+             {path :'AllTICONews' , component :  TICONewsComponent},
+             {path :'AddTICONews' , component :  TICOAddNewComponent} ,
             ]
         }
      ] },

@@ -59,6 +59,7 @@ import { ShowMilitaryCourseLectureComponent } from './Components/DashBoard/Milit
 import { TICONewsComponent } from './Components/DashBoard/TICO/ticonews/ticonews.component';
 import { TICOAddNewComponent } from './Components/DashBoard/TICO/ticoadd-new/ticoadd-new.component';
 import { ExportRegistedStudentPDFComponent } from './Components/DashBoard/MilitryEducation/export-registed-student-pdf/export-registed-student-pdf.component';
+import { TICONewDetailsComponent } from './Components/DashBoard/TICO/ticonew-details/ticonew-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,7 +88,8 @@ import { ExportRegistedStudentPDFComponent } from './Components/DashBoard/Militr
     ShowMilitaryCourseLectureComponent,
     TICONewsComponent,
     TICOAddNewComponent,
-    ExportRegistedStudentPDFComponent
+    ExportRegistedStudentPDFComponent,
+    TICONewDetailsComponent
 
 
 

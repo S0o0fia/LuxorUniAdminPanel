@@ -24,18 +24,6 @@ export class ExportRegistedStudentPDFComponent implements OnInit {
              this.service.getCourseStudents(this.route.snapshot.paramMap.get('id')).subscribe(
               data=>{
                 this.Students = data
-                const DATA  = document.getElementById('Student') as HTMLElement;
-                html2canvas(DATA).then(canvas => {
-
-                  let fileWidth = 208;
-                  let fileHeight = canvas.height * fileWidth / canvas.width;
-
-                  const FILEURI = canvas.toDataURL('image/png')
-                  let PDF = new jsPDF('p', 'mm', 'a4');
-                  let position = 0;
-                  PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
-                  PDF.save( 'RegistedStudent.pdf');
-                  });
               },
               err => console.log(err)
             )
@@ -43,10 +31,21 @@ export class ExportRegistedStudentPDFComponent implements OnInit {
           },
            err=> console.log(err)
         )
+  }
 
+  print()
+  {
+          const DATA  = document.getElementById('Student') as HTMLElement;
+          html2canvas(DATA).then(canvas => {
 
+            let fileWidth = 208;
+            let fileHeight = canvas.height * fileWidth / canvas.width;
 
-
-
+            const FILEURI = canvas.toDataURL('image/png')
+            let PDF = new jsPDF('p', 'mm', 'a4');
+            let position = 0;
+            PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+            PDF.save( 'RegistedStudentOf('+this.course.courseName+').pdf');
+            });
   }
 }

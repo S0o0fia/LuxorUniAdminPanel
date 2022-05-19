@@ -51,6 +51,10 @@ export class SideBarComponent implements OnInit {
     {
       this.Title = 'MilitryEducation'
     }
+    else if (this.role == 'tico')
+    {
+      this.Title = 'TICO'
+    }
 	}
 
 

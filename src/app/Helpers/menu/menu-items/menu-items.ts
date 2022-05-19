@@ -70,8 +70,8 @@ const MENUITEMS = [
           mainrole : 'admin' ,
           subrole :'tico' ,
           children: [
-              {state: 'addTicoNews', name: 'tico Add News',   type: 'link' , icon : 'library_add' },
-              {state: 'showTicoNews', name: 'tico Show All News',   type: 'link' , icon : 'library_add' }         ]
+              {state: 'AddTICONews', name: 'tico Add News',   type: 'link' , icon : 'library_add' },
+              {state: 'AllTICONews', name: 'tico Show All News',   type: 'link' , icon : 'library_add' }         ]
       } ,
       {
 

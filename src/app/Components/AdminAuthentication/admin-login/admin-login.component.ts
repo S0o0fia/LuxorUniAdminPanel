@@ -78,6 +78,10 @@ export class AdminLoginComponent implements OnInit {
          {
               this.router.navigate(['/DashBoard/UnivrsityNews/ShowAllNews'])
          }
+         else if(data.role == 'tico')
+         {
+              this.router.navigate(['/DashBoard/TICO/AllTICONews'])
+         }
        },
        err=> {
 

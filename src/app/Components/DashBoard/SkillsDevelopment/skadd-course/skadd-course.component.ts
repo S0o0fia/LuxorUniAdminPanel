@@ -23,7 +23,7 @@ export class SKAddCourseComponent implements OnInit {
         coursePeriod : ['' , Validators.required],
         coursePriority : ['' , Validators.required],
         courseType : ['' , Validators.required],
-        coursetrainer : ['' , Validators.required],
+        maxTraineesNumber : ['' , Validators.required],
         endDate : ['' , Validators.required],
         startDate : ['' , Validators.required]
       })

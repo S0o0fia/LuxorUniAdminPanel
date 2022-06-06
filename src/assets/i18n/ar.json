@@ -88,8 +88,10 @@
     "professor":"أستاذ"     ,
     "other" :"أخرى" ,
     "All Trainees" :"جميع المدربين",
-    "Assign Trainee" : "تعيين مدرب" ,
-    "Trainee Name" : "اسم المدرب" ,
+    "Assign Trainer" : "تعيين مدرب" ,
+    "Start Time" : "من الساعة" ,
+    "End Time" : "إلى الساعة" ,
+    "Trainer Name" : "اسم المدرب" ,
     "Show Course Trainee" :"عرض مدربي الدورة" ,
     "Course Trainees" :"مدربو الدورة" ,
     "Controls" :"التحكم" ,
@@ -118,8 +120,12 @@
      "Fineart" : "كلية الفنون الجميلة" ,
      "Choose Faculty" : "اختر الكلية" ,
      "Export PDF" : "استخراج ملف PDF",
-     "RegistedDate" : "تاريخ التسجيل"
-
+     "RegistedDate" : "تاريخ التسجيل",
+     "Active" : "مفعل" ,
+     "Closed" : "مغلق" ,
+     "RegisterFull" : "تم اكتمال العدد",
+     "RegisterEnd" : "انتهى التسجيل",
+     "maxTraineesNumber" : "العدد الأقصى للتسجيل"
 
 
 

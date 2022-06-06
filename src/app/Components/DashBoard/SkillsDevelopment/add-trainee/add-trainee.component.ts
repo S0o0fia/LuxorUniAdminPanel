@@ -24,12 +24,10 @@ export class AddTraineeComponent implements OnInit {
         Faculty : ['' , Validators.required],
         Spaceilist : ['' , Validators.required],
         SceintficDegree : ['' , Validators.required],
-        StartDate : ['' , Validators.required],
-        EndDate : ['' , Validators.required],
         Phone : ['' , Validators.required],
         Address : ['' , Validators.required],
         Password : ['' , Validators.required],
-        PasswordSalt : ['' , Validators.required]
+
       })
 
 
@@ -57,7 +55,7 @@ export class AddTraineeComponent implements OnInit {
 
   onSubmit(form : FormGroup)
   {
-      this.service.AddNewTrianee(form.value).subscribe(
+      this.service.AddNewTrianer(form.value).subscribe(
         data=>{
           this.router.navigate(['/DashBoard/SkillsDevelopment/AllTrainees'])
         },

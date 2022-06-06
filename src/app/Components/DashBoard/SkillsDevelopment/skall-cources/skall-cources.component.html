@@ -25,26 +25,27 @@
              <td>{{item.courseCode}}</td>
              <td>{{item.courseName}}</td>
              <td>{{item.courseLocation | translate}}</td>
-             <td colspan="1">{{item.coursetrainer}}</td>
+             <td colspan="1">
+               <div  *ngFor="let item2 of item.trainers">
+               <span>{{item2}} &nbsp;</span>
+              </div>
+             </td>
              <td colspan="1">{{item.startDate | date : 'dd-MM-yyyy'}}</td>
              <td>{{item.endDate | date  : 'dd-MM-yyyy'}}</td>
              <td>{{item.courseType | translate}}</td>
              <td>{{item.coursePeriod | translate}}</td>
              <td>{{item.coursePriority | translate}}</td>
-             <td>
-
-                <span *ngIf="item.isActive" class="active">{{'Activated' | translate}}</span>
-                <span  *ngIf="!item.isActive" class="deactive">{{'Dectivated' | translate}}</span>
-
+             <td [ngClass]="item.courseStatus == 1 ? 'green' : 'red'">
+               {{CourseStatus[item.courseStatus] | translate}}
              </td>
-             <td>
-               <span  *ngIf="item.isActive">{{item.activateDate | date :'dd-MM-yyyy'}}</span>
-               <span  *ngIf="!item.isActive">-</span>
+             <td >
+               <span  *ngIf="item.courseStatus == 1">{{item.activateDate | date :'dd-MM-yyyy'}}</span>
+               <span  *ngIf="!item.courseStatus != 1">-</span>
              </td>
              <td  colspan="1">
-              <mat-icon class="edit" matTooltip="{{'Edit Course' | translate}}" (click)="EditCourse(item.id)">edit</mat-icon>
+              <mat-icon class="edit" matTooltip="{{'Edit Course' | translate}}" (click)="EditCourse(item)">edit</mat-icon>
               <mat-icon class="edit" matTooltip="{{'Show Course Trainee' | translate}}" (click)="openShowTrainee(item.id)">person_pin</mat-icon>
-              <mat-icon matTooltip="{{'Assign Trainee' | translate}}" class="edit" (click)="openAssign(item.id)">add</mat-icon>
+              <mat-icon matTooltip="{{'Assign Trainee' | translate}}" class="edit" (click)="openAssign(item)">add</mat-icon>
               <mat-icon matTooltip="{{'Delete Course' | translate}}" class="edit" (click)="DeleteCourse(item.id)">delete</mat-icon>
             </td>
           </tr>

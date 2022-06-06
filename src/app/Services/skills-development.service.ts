@@ -34,9 +34,9 @@ export class SkillsDevelopmentService {
   }
 
 
-  public AssginTraineetoCourse (data : any)
+  public AssginTrainertoCourse (data : any)
   {
-    let url = 'SkillsDevelopmentCourses/AssignCoursetoTrainee';
+    let url = 'SkillsDevelopmentCourses/AssignCoursetoTrainer';
     return this.http.post(this.baseUrl+url , data);
   }
 
@@ -46,15 +46,15 @@ export class SkillsDevelopmentService {
      return this.http.get(this.baseUrl+url);
   }
 
-  public AddNewTrianee (data : any)
+  public AddNewTrianer (data : any)
   {
-    let url = 'SkillsDevelopmentTrainee/AddNewTrainee';
+    let url = 'SkillsDevelopmentTrainer/AddNewTrainer';
     return this.http.post(this.baseUrl+url , data);
   }
 
-  public getTrainees ()
+  public getTrainers ()
   {
-    let url = 'SkillsDevelopmentTrainee/GetAllTrainees';
+    let url = 'SkillsDevelopmentTrainer/GetAllTrainers';
     return this.http.get(this.baseUrl+url);
   }
 

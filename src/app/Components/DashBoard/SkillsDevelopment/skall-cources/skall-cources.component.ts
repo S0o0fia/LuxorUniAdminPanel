@@ -13,6 +13,14 @@ import { MatDialog } from '@angular/material/dialog';
 export class SKAllCourcesComponent implements OnInit {
 
   public Courses : SkillsDevelopmentCourse[];
+  public CourseStatus : any[] = [
+        "None",
+        "Active",
+        "Closed",
+        "RegisterFull",
+        "RegisterEnd"
+  ]
+
   constructor(private service : SkillsDevelopmentService , public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -25,11 +33,11 @@ export class SKAllCourcesComponent implements OnInit {
     );
   }
 
-  openAssign(id: any)
+  openAssign(item: any)
   {
     const dialogRef = this.dialog.open(AssginTraineeToCouresComponent, {
       width: '500px',
-      data: {id : id}
+      data: {id : item.id , name : item.courseName}
     });
 
   }
@@ -39,7 +47,7 @@ export class SKAllCourcesComponent implements OnInit {
   {
     const dialogRef = this.dialog.open(ShowCourseTraineeComponent, {
       width: '500px',
-      data: {id : id}
+      data: {id : id , }
     });
   }
 

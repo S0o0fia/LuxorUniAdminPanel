@@ -19,8 +19,8 @@
              <td>{{item.email}}</td>
              <td>{{item.phone}}</td>
              <td>{{item.address}}</td>
-             <td>{{item.faculty | translate}}</td>
-             <td>{{item.sceintficDegree  | translate}}</td>
+             <td>{{ faculties[item.faculty].label| translate}}</td>
+             <td>{{ scentificDegree[item.sceintficDegree].label  | translate}}</td>
              <td>{{item.spaceilist }}</td>
             </tr>
        </tbody>

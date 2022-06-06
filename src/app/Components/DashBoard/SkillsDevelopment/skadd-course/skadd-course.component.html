@@ -40,10 +40,10 @@
                       <mat-form-field class="full-wid mrgn-b-lg ">
                         <mat-label>{{'Course Location' | translate}}</mat-label>
                           <mat-select required formControlName="courseLocation">
-                            <mat-option value="Online">
+                            <mat-option value=1>
                               {{'Online' | translate}}
                             </mat-option>
-                            <mat-option value="InCenter">
+                            <mat-option value=2>
                               {{'InCenter' | translate}}
                             </mat-option>
                           </mat-select>
@@ -55,10 +55,10 @@
                     <mat-form-field class="full-wid mrgn-b-lg ">
                       <mat-label>{{'Course Period' | translate}}</mat-label>
                         <mat-select required formControlName="coursePeriod">
-                          <mat-option value="pm">
+                          <mat-option value=2>
                             {{'pm' | translate}}
                           </mat-option>
-                          <mat-option value="am">
+                          <mat-option value=1>
                             {{'am' | translate}}
                           </mat-option>
                         </mat-select>
@@ -73,10 +73,10 @@
                         <mat-form-field class="full-wid mrgn-b-lg ">
                           <mat-label>{{'Course Proirity' | translate}}</mat-label>
                             <mat-select required formControlName="coursePriority">
-                              <mat-option value="required">
+                              <mat-option value=1>
                                 {{'required' | translate}}
                               </mat-option>
-                              <mat-option value="optional">
+                              <mat-option value=2>
                                 {{'optional' | translate}}
                               </mat-option>
                             </mat-select>
@@ -89,10 +89,10 @@
                         <mat-form-field class="full-wid mrgn-b-lg ">
                           <mat-label>{{'Course Type' | translate}}</mat-label>
                             <mat-select required formControlName="courseType">
-                              <mat-option value="general">
+                              <mat-option value=1>
                                 {{'general' | translate}}
                               </mat-option>
-                              <mat-option value="medical">
+                              <mat-option value=2>
                                 {{'medical' | translate}}
                               </mat-option>
                             </mat-select>
@@ -124,11 +124,54 @@
                 </div>
 
 
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
 
+                       <!--Activate Date-->
+                       <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                        <mat-form-field class="full-wid mrgn-b-lg ">
+                          <mat-label>{{'Activate Date' | translate}}</mat-label>
+                          <input matInput [matDatepicker]="picker3" formControlName="activateDate">
+                          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                          <mat-datepicker #picker3></mat-datepicker>
+                        </mat-form-field>
+                      </div>
+                         <!--Course Status-->
+                     <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                      <mat-form-field class="full-wid mrgn-b-lg ">
+                        <mat-label>{{'Course Status' | translate}}</mat-label>
+                          <mat-select required formControlName="coursePriority">
+                            <mat-option value=1>
+                              {{'Active' | translate}}
+                            </mat-option>
+                            <mat-option value=2>
+                              {{'Closed' | translate}}
+                            </mat-option>
+                            <mat-option value=3>
+                              {{'RegisterFull' | translate}}
+                            </mat-option>
+                            <mat-option value=4>
+                              {{'RegisterEnd' | translate}}
+                            </mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                    </div>
+                </div>
+
+                <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+                  <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49">
+                    <mat-form-field class="full-wid mrgn-b-lg ">
+                        <input matInput
+                        formControlName="maxTraineesNumber"
+                         placeholder="{{'maxTraineesNumber'|translate}}" type="text" required>
+                    </mat-form-field>
+                 </div>
+                </div>
                 <div fxLayout="row wrap" fxLayoutAlign="space-between center">
 
                <div fxFlex.gt-sm="49" fxFlex.gt-xs="49" fxFlex="100" fxFlex.gt-md="49" fxLayoutAlign="end">
-                 <button mat-raised-button color="accent" type="submit" >{{'Add' | translate}}</button>
+                 <button
+                  [disabled]="!AddCourseForm.valid"
+                  mat-raised-button color="accent" type="submit" >{{'Add' | translate}}</button>
                </div>
                 </div>
               </div>

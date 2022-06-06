@@ -31,11 +31,11 @@ export class AllTraineeComponent implements OnInit {
       {value : 5 , label : "other"},
     ];
 
-    
+
    }
 
   ngOnInit(): void {
-    this.service.getTrainees().subscribe(
+    this.service.getTrainers().subscribe(
       data=>{this.AllTrainees = data },
       err=> console.log(err)
     )

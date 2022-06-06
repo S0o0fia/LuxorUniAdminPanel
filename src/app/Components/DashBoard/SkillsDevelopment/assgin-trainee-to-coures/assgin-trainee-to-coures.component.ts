@@ -22,16 +22,18 @@ export class AssginTraineeToCouresComponent implements OnInit {
     private formBuilder : FormBuilder ,
     private _snackBar: MatSnackBar) {
       this.assignTraineetoCourseForm = this.formBuilder.group({
-        CourseId : [data.id] ,
-        TraineeId : ['' , Validators.required] ,
-        StartDate : ['' , Validators.required] ,
-        EndDate : ['' , Validators.required]
+        courseId : [data.id] ,
+        trainerId : ['' , Validators.required] ,
+        fromDate : ['' , Validators.required] ,
+        toDate : ['' , Validators.required],
+        fromTime : ['' , Validators.required],
+        toTime : ['' , Validators.required]
       });
 
      }
 
   ngOnInit(): void {
-    this.service.getTrainees().subscribe(
+    this.service.getTrainers().subscribe(
       data=> this.allTrainee = data ,
       err=>console.log(err)
     )
@@ -42,7 +44,8 @@ export class AssginTraineeToCouresComponent implements OnInit {
 
   onSubmit(form : FormGroup)
   {
-     this.service.AssginTraineetoCourse(form.value).subscribe(
+
+     this.service.AssginTrainertoCourse(this.assignTraineetoCourseForm.value).subscribe(
        data=> {
         this._snackBar.open("تم تعيين المدرب بنجاح", null , {
           horizontalPosition: this.horizontalPosition,

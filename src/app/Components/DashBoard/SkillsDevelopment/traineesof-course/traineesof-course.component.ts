@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { SkillsDevelopmentService } from 'src/app/Services/skills-development.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SKAllCourcesComponent } from '../skall-cources/skall-cources.component';
 
 @Component({
   selector: 'app-traineesof-course',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TraineesofCourseComponent implements OnInit {
 
-  constructor() { }
+  TraineeofCourse : any [] =[];
+  baseUrl         : string = 'http://localhost:65535/';
+  constructor(private service : SkillsDevelopmentService ,
+    public dialogRef: MatDialogRef<SKAllCourcesComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any ,) { }
 
   ngOnInit(): void {
+    this.service.getTraineeofCourse(this.data.id).subscribe(
+       (res : any)=> this.TraineeofCourse = res,
+       (err)=> console.log(err)
+    )
   }
 
 }

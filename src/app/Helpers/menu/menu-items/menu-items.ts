@@ -83,15 +83,15 @@ const MENUITEMS = [
       icon: 'person',
 
       },
-      {
-      state: 'logout',
-      name: 'Logout',
-      type: 'button',
-      mainrole : 'admin' ,
-      subrole :'all' ,
-      icon: 'exit_to_app'
+      // {
+      // state: 'logout',
+      // name: 'Logout',
+      // type: 'button',
+      // mainrole : 'admin' ,
+      // subrole :'all' ,
+      // icon: 'exit_to_app'
 
-      }
+      // }
 ]
 
 @Injectable()

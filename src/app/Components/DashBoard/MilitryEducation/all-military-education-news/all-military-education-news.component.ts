@@ -65,7 +65,7 @@ toAdd ()
 export class MilitaryNewDetailsDialog implements OnInit {
 
   public NewDetails : any;
-  baseurl = 'http://localhost:65535/';
+  baseurl = 'http://luxor.edu.eg:8098/';
   constructor (
    public dialogRef: MatDialogRef<AllMilitaryEducationNewsComponent>,
   @Inject(MAT_DIALOG_DATA) public id: number ,

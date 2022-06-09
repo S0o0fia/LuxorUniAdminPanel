@@ -1,3 +1,4 @@
+import { TraineesofCourseComponent } from './../traineesof-course/traineesof-course.component';
 import { ShowCourseTraineeComponent } from './../show-course-trainee/show-course-trainee.component';
 import { AssginTraineeToCouresComponent } from './../assgin-trainee-to-coures/assgin-trainee-to-coures.component';
 import { SkillsDevelopmentCourse } from './../../../../Model/Skills Development/SkillsDevelopmentCourse';
@@ -21,6 +22,30 @@ export class SKAllCourcesComponent implements OnInit {
         "RegisterEnd"
   ]
 
+
+  public CoursePeriod : any[] = [
+    "None",
+    "Morning",
+    "Night",
+  ]
+
+  public CourseLocation : any[] = [
+    "None",
+    "Online",
+    "Onsite",
+  ]
+
+  public CoursePeriorty : any[] = [
+    "None",
+    "Required",
+    "Optional",
+  ]
+
+  public CourseType : any[] = [
+    "None",
+    "General",
+    "Medical",
+  ]
   constructor(private service : SkillsDevelopmentService , public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -43,11 +68,11 @@ export class SKAllCourcesComponent implements OnInit {
   }
 
 
-  openShowTrainee(id : any)
+  openShowTrainee(item : any)
   {
-    const dialogRef = this.dialog.open(ShowCourseTraineeComponent, {
+    const dialogRef = this.dialog.open(TraineesofCourseComponent, {
       width: '500px',
-      data: {id : id , }
+      data: {id : item.id , name : item.courseName}
     });
   }
 

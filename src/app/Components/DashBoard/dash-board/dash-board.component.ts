@@ -188,10 +188,8 @@ export class DashBoardComponent implements OnInit {
 	  */
    logout()
    {
-     sessionStorage.removeItem('token');
-     sessionStorage.removeItem('username');
-     sessionStorage.removeItem('role');
-     this.router.navigate(['CrpLogin']);
+     sessionStorage.clear();
+     this.router.navigate(['/']);
    }
 
 	/**

@@ -93,7 +93,7 @@
     "End Time" : "إلى الساعة" ,
     "Trainer Name" : "اسم المدرب" ,
     "Show Course Trainee" :"عرض مدربي الدورة" ,
-    "Course Trainees" :"مدربو الدورة" ,
+    "Course Trainees" :"متدربين دورة" ,
     "Controls" :"التحكم" ,
     "Edit Course":"تعديل دورة",
     "Delete Course":"حذف دورة" ,
@@ -125,7 +125,19 @@
      "Closed" : "مغلق" ,
      "RegisterFull" : "تم اكتمال العدد",
      "RegisterEnd" : "انتهى التسجيل",
-     "maxTraineesNumber" : "العدد الأقصى للتسجيل"
+     "maxTraineesNumber" : "العدد الأقصى للتسجيل",
+     "TraineeName" : "اسم المتدرب" ,
+     "registerDate" : "تاريخ التسجيل" ,
+     "recieptFile" : "صورة وصل الدفع" ,
+     "notUploaded" :"لم يتم الرفع بعد",
+     "Morning" : "صباحا" ,
+     "Night" : "مساء" ,
+     "Onsite" :"في المقر",
+     "General" :"عام" ,
+     "Medical" :"طبي" ,
+     "Required" : "إجباري" ,
+     "Optional" : "اختياري"
+
 
 
 

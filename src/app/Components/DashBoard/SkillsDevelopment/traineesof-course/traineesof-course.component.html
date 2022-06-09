@@ -1,1 +1,36 @@
-<p>traineesof-course works!</p>
+<div class="container" dir="rtl">
+  <h1 mat-dialog-title style="font-weight: bold;">{{'Course Trainees' | translate}} {{data.name}}</h1>
+<div>
+  <div class="table-responsive">
+
+      <mat-card-content class=" table-responsive">
+       <table class="table table-hover table-middle mb-0 table-bordered">
+         <thead  class="thead-dark">
+            <tr>
+               <th>{{'TraineeName' | translate}}</th>
+               <th>{{'registerDate' | translate}}</th>
+               <th>{{'recieptFile' | translate}}</th>
+
+             </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let item of TraineeofCourse">
+               <td>{{item.traineeName}}</td>
+               <td>{{item.registerDate | date : 'dd-MM-yyyy'}}</td>
+                <td>
+                  <span *ngIf="item.recieptFile == null">{{'notUploaded' | translate}}</span>
+                  <a *ngIf="item.recieptFile != null" [href]="baseUrl+item.recieptFile" target="_blank">{{'OpenFile' | translate}}</a>
+                </td>
+              </tr>
+         </tbody>
+      </table>
+      </mat-card-content>
+
+
+   </div>
+
+   <div mat-dialog-actions style="text-align: center; justify-content: center;">
+     <button mat-raised-button color="warn" [mat-dialog-close]="data.animal" cdkFocusInitial>{{'Close' | translate}}</button>
+  </div>
+
+</div>

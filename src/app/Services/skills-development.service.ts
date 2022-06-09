@@ -58,6 +58,11 @@ export class SkillsDevelopmentService {
     return this.http.get(this.baseUrl+url);
   }
 
+  public getTraineeofCourse (courseId : number)
+  {
+     let url = 'SkillsDevelopmentCourses/GetCourseTrainee/'+courseId;
+     return this.http.get(this.baseUrl+url);
+  }
 
 
 

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class UniversityWebsiteService {
 
-  BaseUrl : string = 'http://localhost:65535/api/';
+  BaseUrl : string = 'http://luxor.edu.eg:8098/api/';
 
    header: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json'

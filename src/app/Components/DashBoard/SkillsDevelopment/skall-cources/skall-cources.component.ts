@@ -50,6 +50,12 @@ export class SKAllCourcesComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.LoadAllData();
+
+  }
+
+  LoadAllData() : void
+  {
     this.service.GetAllCourse().subscribe(
       data =>{ this.Courses = data ,
                console.log(this.Courses)
@@ -57,7 +63,6 @@ export class SKAllCourcesComponent implements OnInit {
       err=> console.log(err)
     );
   }
-
   openAssign(item: any)
   {
     const dialogRef = this.dialog.open(AssginTraineeToCouresComponent, {
@@ -65,6 +70,9 @@ export class SKAllCourcesComponent implements OnInit {
       data: {id : item.id , name : item.courseName}
     });
 
+    dialogRef.afterClosed().subscribe(
+      (res)=> this.LoadAllData()
+    )
   }
 
 

@@ -11,7 +11,7 @@ import { SKAllCourcesComponent } from '../skall-cources/skall-cources.component'
 export class TraineesofCourseComponent implements OnInit {
 
   TraineeofCourse : any [] =[];
-  baseUrl         : string = 'http://localhost:65535/';
+  baseUrl         : string = 'http://luxor.edu.eg:8098/';
   constructor(private service : SkillsDevelopmentService ,
     public dialogRef: MatDialogRef<SKAllCourcesComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any ,) { }

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TICOService {
 
-  baseUrl : string = 'http://localhost:65535/api/'
+  baseUrl : string = 'http://luxor.edu.eg:8098/api/'
   constructor(private http:HttpClient) { }
 
 

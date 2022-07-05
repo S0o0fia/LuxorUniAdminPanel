@@ -1,3 +1,4 @@
+import { AddLecturesComponent } from './../add-lectures/add-lectures.component';
 import { TraineesofCourseComponent } from './../traineesof-course/traineesof-course.component';
 import { ShowCourseTraineeComponent } from './../show-course-trainee/show-course-trainee.component';
 import { AssginTraineeToCouresComponent } from './../assgin-trainee-to-coures/assgin-trainee-to-coures.component';
@@ -56,6 +57,11 @@ export class SKAllCourcesComponent implements OnInit {
 
   LoadAllData() : void
   {
+  this.LoadData();
+  }
+
+  LoadData()
+  {
     this.service.GetAllCourse().subscribe(
       data =>{ this.Courses = data ,
                console.log(this.Courses)
@@ -83,5 +89,20 @@ export class SKAllCourcesComponent implements OnInit {
       data: {id : item.id , name : item.courseName}
     });
   }
+  openLecture(item : any)
+  {
+    const dialogRef = this.dialog.open(AddLecturesComponent, {
+      width: '75%',
+      position : {top : "10%"} ,
+      data: {id : item.id , name : item.courseName}
+    });
 
+  }
+
+  DeleteCourse (id : number)
+  {
+    this.service.DeleteCourse(id).subscribe(
+      (res)=> {this.LoadData()} ,
+      (err)=>console.log(err)
+    )  }
 }

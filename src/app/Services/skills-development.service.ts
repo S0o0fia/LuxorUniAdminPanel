@@ -65,5 +65,29 @@ export class SkillsDevelopmentService {
   }
 
 
+  public getCourseTrainers (courseId : number)
+  {
+    let url = 'SkillsDevelopmentCourses/GetCourseTrainers/'+courseId;
+    return this.http.get(this.baseUrl+url);
+  }
 
+
+  public AddMeetingLink (data : any)
+  {
+    let url = 'SkillsDevelopmentTrainer/AddTrainerLecture';
+    return this.http.post(this.baseUrl+url , data);
+  }
+
+
+  public UploadAttendanceFile (data : FormData , courseId : number , trainerId : number)
+  {
+    let url = `SkillsDevelopmentTrainer/AddTrainerAttendance/${courseId}/${trainerId}`;
+    return this.http.post(this.baseUrl+url , data);
+  }
+
+  public DeleteCourse (id : number)
+  {
+     let url = 'SkillsDevelopmentCourses/DeleteSkillsCourse/'+id ;
+     return this.http.delete(this.baseUrl+url);
+  }
 }

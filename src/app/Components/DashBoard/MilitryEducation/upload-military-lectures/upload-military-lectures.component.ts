@@ -42,7 +42,7 @@ export class UploadMilitaryLecturesComponent implements OnInit {
   UploadFile(event : any)
   {
     let fileToUpload = event.target.files[0];
-    this.FileForm.append('Lecture',fileToUpload, fileToUpload.name);
+    this.FileForm.set('Lecture',fileToUpload, fileToUpload.name);
   }
 
   AddLecture(data : FormGroup)

@@ -92,8 +92,12 @@
     "Start Time" : "من الساعة" ,
     "End Time" : "إلى الساعة" ,
     "Trainer Name" : "اسم المدرب" ,
-    "Show Course Trainee" :"عرض مدربي الدورة" ,
+    "OpenFile" : "فتح الملف" ,
+    "Trainee Name" : "اسم المتدرب" ,
+    "Show Course Trainee" :"عرض مندربي الدورة" ,
+    "ِAssign Lecture" :"رفع المحاضرات" ,
     "Course Trainees" :"متدربين دورة" ,
+    "Save" : "حفظ" ,
     "Controls" :"التحكم" ,
     "Edit Course":"تعديل دورة",
     "Delete Course":"حذف دورة" ,
@@ -136,7 +140,9 @@
      "General" :"عام" ,
      "Medical" :"طبي" ,
      "Required" : "إجباري" ,
-     "Optional" : "اختياري"
+     "Optional" : "اختياري",
+     "Meeting Link" : "رابط المحاضرة" ,
+     "Attendence File" : "ملف بيان الحضور"
 
 
 

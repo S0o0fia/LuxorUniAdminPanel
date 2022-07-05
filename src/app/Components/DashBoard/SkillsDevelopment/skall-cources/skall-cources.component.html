@@ -40,12 +40,13 @@
              </td>
              <td >
                <span  *ngIf="item.courseStatus == 1">{{item.activateDate | date :'dd-MM-yyyy'}}</span>
-               <span  *ngIf="!item.courseStatus != 1">-</span>
+               <span  *ngIf="item.courseStatus != 1">-</span>
              </td>
              <td  colspan="1">
               <mat-icon class="edit" matTooltip="{{'Edit Course' | translate}}" (click)="EditCourse(item)">edit</mat-icon>
               <mat-icon class="edit" matTooltip="{{'Show Course Trainee' | translate}}" (click)="openShowTrainee(item)">person_pin</mat-icon>
               <mat-icon matTooltip="{{'Assign Trainer' | translate}}" class="edit" (click)="openAssign(item)">add</mat-icon>
+              <mat-icon matTooltip="{{'ِAssign Lecture' | translate}}" *ngIf="item.courseStatus == 1" class="edit" (click)="openLecture(item)">computer</mat-icon>
               <mat-icon matTooltip="{{'Delete Course' | translate}}" class="edit" (click)="DeleteCourse(item.id)">delete</mat-icon>
             </td>
           </tr>

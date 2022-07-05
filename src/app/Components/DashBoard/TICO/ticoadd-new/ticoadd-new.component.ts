@@ -36,7 +36,7 @@ export class TICOAddNewComponent implements OnInit {
 
 
     let fileToUpload = event.target.files[0];
-    this.fromData.append('mainPhoto', fileToUpload, fileToUpload.name);
+    this.fromData.set('mainPhoto', fileToUpload, fileToUpload.name);
   }
 
   //forPhoto1
@@ -45,7 +45,7 @@ export class TICOAddNewComponent implements OnInit {
 
 
     let fileToUpload = event.target.files[0];
-    this.fromData.append('Photo1', fileToUpload, fileToUpload.name);
+    this.fromData.set('Photo1', fileToUpload, fileToUpload.name);
   }
 
    //forPhoto2
@@ -53,7 +53,7 @@ export class TICOAddNewComponent implements OnInit {
    {
 
      let fileToUpload = event.target.files[0];
-     this.fromData.append('Photo2', fileToUpload, fileToUpload.name);
+     this.fromData.set('Photo2', fileToUpload, fileToUpload.name);
    }
 
 
@@ -61,7 +61,7 @@ export class TICOAddNewComponent implements OnInit {
   Photo3 (event : any)
   {
     let fileToUpload = event.target.files[0];
-    this.fromData.append('Photo3', fileToUpload, fileToUpload.name);
+    this.fromData.set('Photo3', fileToUpload, fileToUpload.name);
   }
 
   onSubmit (data : FormGroup)
